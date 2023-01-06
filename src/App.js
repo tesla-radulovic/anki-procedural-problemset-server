@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { MathComponent } from "mathjax-react";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+         <MathComponent tex={String.raw`\int_0^1 x^2\ dx`} />
         </p>
         <a
           className="App-link"
