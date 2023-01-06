@@ -5,6 +5,11 @@ import { useLocation } from 'react-router-dom';
 import queryString from 'query-string'
 
 
+const eqs = {
+  integral_y: () =>{ return String.raw`\int_0^1 y^2\ dy`} ,
+  integral_x: () =>{ return String.raw`\int_0^1 x^2\ dx`}
+}
+
 function App() {
 
   let location = useLocation();
@@ -19,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <p>
-        <MathComponent tex={String.raw`\int_0^1 x^2\ dx`} />
+        <MathComponent tex={eqs[values.eq]()} />
       </p>
     </div>
   );
